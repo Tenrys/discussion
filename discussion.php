@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION["user"])) {
-        header("Refresh: 0; URL=/connexion.php");
+        header("Location: connexion.php");
         die;
     }
 
@@ -17,7 +17,7 @@
         $stmt->bind_param("ss", $message, $id);
         $stmt->execute();
 
-        header("Refresh: 0; URL=/discussion.php");
+        header("Location: discussion.php");
         die;
     }
 
@@ -51,7 +51,7 @@
 <body>
     <header>
         <h1>Discussion</h1>
-        <a href="/">Retour</a>
+        <a href="index.php">Retour</a>
     </header>
     <main id="discussion">
         <?php
